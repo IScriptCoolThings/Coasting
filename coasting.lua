@@ -26,14 +26,6 @@ local Library = {
     HueSelectionPosition = 0
 }
 
-local function DarkenObjectColor(object, amount)
-    local ColorR = (object.r * 1) - amount
-    local ColorG = (object.g * 1) - amount
-    local ColorB = (object.b * 1) - amount
-   
-    return Color3.fromRGB(ColorR, ColorG, ColorB)
-end
-
 local function SetUIAccent(color)
     for i, v in pairs(Library.LibraryColorTable) do
         if HasProperty(v, "ImageColor3") then
