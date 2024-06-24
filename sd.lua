@@ -4615,5 +4615,15 @@ function library:init()
 
 end
 
+function library:CreateSettingsTab(menu)
+    local mainSection = settingsTab:AddSection('Main', 1);
+
+    mainSection:AddBind({text = 'Open / Close', flag = 'togglebind', nomouse = true, noindicator = true, bind = Enum.KeyCode.RightShift, callback = function()
+        library:SetOpen(not library.open)
+    end});
+
+    return settingsTab;
+end
+
 getgenv().library = library
 return library
